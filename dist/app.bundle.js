@@ -1,1 +1,1 @@
-console.log("webpack");
+(()=>{"use strict";const t=document.createElement("div"),e=document.querySelector("body");t.classList.add("container"),e.appendChild(t),function(t){const e=document.createElement("div");e.classList.add("header"),t.appendChild(e)}(t);const s=new class{constructor(t,e,s,c,i){this.taskName=t,this.taskDescription=e,this.dueDate=s,this.priority=c,this.checklist=i}}("Do hw","finish bio and chem hw");console.log(s)})();
