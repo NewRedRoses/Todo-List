@@ -9,6 +9,8 @@ class Task {
 }
 
 const TaskManager = (() => {
+  const createTask = (title, description, dueDate, priority, checklist) =>
+    new Task(title, description, dueDate, priority, checklist);
   const addThisTaskToArray = (task, array) => array.push(task);
   const removeThisTaskFromArray = (task, array) => {
     const index = array.indexOf(task);
@@ -19,7 +21,7 @@ const TaskManager = (() => {
       console.log("Task not in this array");
     }
   };
-  return { addThisTaskToArray, removeThisTaskFromArray };
+  return { createTask, addThisTaskToArray, removeThisTaskFromArray };
 })();
 
 export { Task, TaskManager };
