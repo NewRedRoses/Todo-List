@@ -8,4 +8,18 @@ class Task {
   }
 }
 
-export { Task };
+const TaskManager = (() => {
+  const addThisTaskToArray = (task, array) => array.push(task);
+  const removeThisTaskFromArray = (task, array) => {
+    const index = array.indexOf(task);
+    if (index !== -1) {
+      console.log("Task found in this array..removing");
+      array.splice(index, 1);
+    } else {
+      console.log("Task not in this array");
+    }
+  };
+  return { addThisTaskToArray, removeThisTaskFromArray };
+})();
+
+export { Task, TaskManager };
