@@ -25,7 +25,7 @@ export default function sidebar() {
   const tagButtons = ["School", "Work", "Random"];
   tagButtons.forEach((title) => {
     const button = document.createElement("button");
-    button.classList.add("task-filter-btn");
+    button.classList.add("tag-filter-btn");
     button.textContent = title;
     sidebarTagsContainer.appendChild(button);
   });
