@@ -14,15 +14,33 @@ body {
   align-items: center;
   width: 100%;
 }
+.task-options,
+.tags-options {
+  height: 30%;
+}
 .bottom {
   display: flex;
   height: 100%;
 }
 .sidebar {
-  /* Change later */
-  flex: 1;
+  /* Change to min width */
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  flex: 1.5;
 }
 .content {
-  /* change later */
-  flex: 4;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
+  flex-wrap: wrap;
+  flex: 7;
+}
+.card-container {
+  width: clamp(100px, 150px, 300px);
+  height: 70px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
 }
