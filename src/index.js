@@ -11,8 +11,9 @@ header();
 sidebar();
 content();
 
-const hw = TaskCreator("Homework", "Bio", "urgent");
-const hw2 = TaskCreator("Homework", "Bio", "urgent");
-for (let x = 0; x < 20; x++) {
-  new Card(hw);
-}
+// Dummy samples to showcase cards + tasks
+const sampleTasks = ["Do Homework", "Wash car", "Go to Protest", "Read book", "Finish coding course", "Do laundry"];
+sampleTasks.forEach((sampleTask) => {
+  let task = TaskCreator(sampleTask, "", "Urgent");
+  new Card(task);
+});
