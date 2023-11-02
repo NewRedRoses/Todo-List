@@ -15,6 +15,10 @@ class Card {
     const container = document.querySelector(".content");
     container.appendChild(this.cardContainer);
 
+    this.cardContainer.addEventListener("click", this.expandCard.bind(this));
+  }
+  expandCard() {
+    console.log(this.task.title);
   }
 }
 
