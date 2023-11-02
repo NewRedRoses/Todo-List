@@ -4,7 +4,7 @@ This is a simple todo app made with vanilla JS and webpack.
 
 ## Live preview
 
-`add link to preview here`
+[Live preview](https://newredroses.github.io/Todo-List/dist)
 
 ## List of things to do for this tag
 - [x] Create the task properties  `title`, `description`,`due date` and `priority`. 
