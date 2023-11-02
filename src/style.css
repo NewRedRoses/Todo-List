@@ -25,11 +25,6 @@ body {
   margin: 0px;
   height: 100vh;
 }
-.header {
-  font-weight: 500;
-  color: var(--light-white-color);
-  background-color: var(--light-white-color);
-}
 .container {
   height: 100%;
   display: flex;
@@ -41,9 +36,12 @@ body {
 }
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  font-weight: 500;
   align-items: center;
   width: 100%;
+  padding: 10px;
+  color: var(--light-white-color);
   background-color: var(--light-blue-color);
   border-bottom: 3px solid var(--dark-blue-color);
 }
@@ -105,6 +103,9 @@ button {
   font-weight: 550;
   font-family: "Montserrat", sans-serif;
   position: relative;
+}
+button.add-task-btn {
+  width: 60px;
 }
 
 button:hover {
