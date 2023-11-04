@@ -130,3 +130,13 @@ dialog {
 input[type="date"] {
   width: fit-content;
 }
+.close-task-btn {
+  margin-bottom: 10px;
+}
+
+.close-task-btn:hover {
+  background: var(--light-red-color);
+  border: 3px solid var(--light-red-color);
+  color: var(--light-white-color);
+  font-size: 1.15em;
+}
