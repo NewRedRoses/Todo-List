@@ -1,4 +1,4 @@
-import { createTaskModal, showTaskModal } from "/src/Modal.js";
+import { showTaskModal } from "/src/Modal.js";
 export default function headerPage() {
   const header = document.querySelector(".header");
 
@@ -11,4 +11,5 @@ export default function headerPage() {
   createTaskBtn.textContent = "+";
   createTaskBtn.classList.add("add-task-btn");
   header.appendChild(createTaskBtn);
+  showTaskModal();
 }

@@ -116,3 +116,17 @@ button:hover {
 button:active {
   top: 1px;
 }
+::backdrop {
+  background-color: black;
+  opacity: 0.55;
+}
+dialog {
+  width: 400px;
+}
+.task-creation-form {
+  display: flex;
+  flex-direction: column;
+}
+input[type="date"] {
+  width: fit-content;
+}
