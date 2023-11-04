@@ -121,22 +121,43 @@ button:active {
   opacity: 0.55;
 }
 dialog {
-  width: 400px;
+  width: 300px;
 }
 .task-creation-form {
   display: flex;
   flex-direction: column;
+  gap: 5px;
+  padding-bottom: 10px;
 }
 input[type="date"] {
   width: fit-content;
 }
-.close-task-btn {
-  margin-bottom: 10px;
+.close-btn-container {
+  display: flex;
+  justify-content: flex-end;
 }
-
-.close-task-btn:hover {
+.close-task-btn {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
   background: var(--light-red-color);
   border: 3px solid var(--light-red-color);
   color: var(--light-white-color);
   font-size: 1.15em;
+}
+
+.close-task-btn:hover {
+  background: var(--light-white-color);
+  border: 3px solid var(--light-red-color);
+  color: var(--light-red-color);
+  font-size: 1.15em;
+}
+.dialog-title {
+  font-weight: 150;
+  font-size: 1.3em;
+  margin-bottom: 10px;
 }
