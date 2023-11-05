@@ -1,15 +1,14 @@
 class Task {
-  constructor(title, description, dueDate, priority, checklist) {
+  constructor(title, description, dueDate, priority) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
-    this.checklist = checklist;
   }
 }
 
-function TaskCreator(title, description, dueDate, priority, checklist) {
-  return new Task(title, description, dueDate, priority, checklist);
+function TaskCreator(title, description, dueDate, priority) {
+  return new Task(title, description, dueDate, priority);
 }
 
 const TaskManager = (() => {
