@@ -1,3 +1,4 @@
+import { Card } from "./Card";
 class Task {
   constructor(title, description, dueDate, priority) {
     this.title = title;
@@ -25,4 +26,11 @@ const TaskManager = (() => {
   return { addThisTaskToArray, removeThisTaskFromArray };
 })();
 
-export { Task, TaskManager, TaskCreator };
+const TaskDisplayer = (() => {
+  const displayTask = (task) => {
+    new Card(task);
+  };
+  return { displayTask };
+})();
+
+export { Task, TaskManager, TaskCreator, TaskDisplayer };
