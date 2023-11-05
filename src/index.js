@@ -1,4 +1,4 @@
-import { TaskCreator } from "./Task";
+import { TaskDisplayer, TaskCreator } from "./Task";
 import header from "./Pages/header";
 import sidebar from "./Pages/sidebar";
 import content from "./Pages/content";
@@ -12,7 +12,15 @@ sidebar();
 content();
 
 // Dummy samples to showcase cards + tasks
-const sampleTasks = ["Do Homework", "Wash car", "Go to Protest", "Read book", "Finish coding course", "Do laundry"];
+const sampleTasks = [
+  "Do Homework",
+  "Wash car",
+  "Go to Protest",
+  "Read book",
+  "Finish coding course",
+  "Do laundry",
+];
+
 sampleTasks.forEach((sampleTask) => {
   let task = TaskCreator(sampleTask, "", "Urgent");
   new Card(task);
