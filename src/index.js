@@ -12,16 +12,18 @@ sidebar();
 content();
 
 // Dummy samples to showcase cards + tasks
-const sampleTasks = [
-  "Do Homework",
-  "Wash car",
-  "Go to Protest",
-  "Read book",
-  "Finish coding course",
-  "Do laundry",
-];
-
-sampleTasks.forEach((sampleTask) => {
-  let task = TaskCreator(sampleTask, "", "Urgent");
-  new Card(task);
-});
+function demoTasks() {
+  const sampleTasks = [
+    "Do Homework",
+    "Wash car",
+    "Go to Protest",
+    "Read book",
+    "Finish coding course",
+    "Do laundry",
+  ];
+  sampleTasks.forEach((sampleTask) => {
+    let task = TaskCreator(sampleTask, "", "Urgent");
+    TaskDisplayer.displayTask(task);
+  });
+}
+demoTasks();
