@@ -9,7 +9,7 @@ This is a simple todo app made with vanilla JS and webpack.
 ## List of things to do for this tag
 - [x] Create the task properties  `title`, `description`,`due date` and `priority`. 
   - [ ] OPTIONAL: Add `notes` and `checklist` properties. 
-- [ ] Create a "home" page thats the default page where all tasks can be displayed. 
+- [x] Create a "home" page thats the default page where all tasks can be displayed. 
 - [ ] Add a "tags" page, where all tags can be viewed. 
 - [ ] Add "tags" section where tasks can belong to a specific tag. 
 - [ ] Add ability to create new tags.
