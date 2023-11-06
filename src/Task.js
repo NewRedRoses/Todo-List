@@ -30,7 +30,13 @@ const TaskDisplayer = (() => {
   const displayTask = (task) => {
     new Card(task);
   };
-  return { displayTask };
+  const displayAllTasks = (listOfTasks) => {
+    console.log(listOfTasks);
+    listOfTasks.forEach((task) => {
+      new Card(task);
+    });
+  };
+  return { displayTask, displayAllTasks };
 })();
 
-export { Task, TaskManager, TaskCreator, TaskDisplayer };
+export { TaskManager, TaskCreator, TaskDisplayer };
