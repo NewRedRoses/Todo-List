@@ -32,18 +32,22 @@ function submitButtonEventListener(dialog) {
 
 function taskFormValuesEventListener(dialog) {
   const form = document.querySelector(".task-creation-form");
-  let stringOfValues = "";
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    let taskProperties = [];
     dialog.close();
     const formData = new FormData(form);
     for (const pair of formData.entries()) {
-      stringOfValues += `"${pair[1]}",`;
+      taskProperties.push(pair[1]);
     }
-    stringOfValues = stringOfValues.slice(0, -1);
-    const task = TaskCreator(stringOfValues);
+    let task = TaskCreator(
+      taskProperties[0],
+      taskProperties[1],
+      taskProperties[2],
+      taskProperties[3]
+    );
+
     TaskDisplayer.displayTask(task);
-    stringOfValues = "";
   });
 }
 
