@@ -1,54 +1,60 @@
 import { TaskCreator, TaskDisplayer } from "./Task";
 function showTaskModal() {
   const dialog = document.querySelector("dialog");
-  let taskProperties = [];
-  showButtonEventListener(dialog);
-  closeButtonEventListener(dialog);
-  taskFormValuesEventListener(dialog);
-  submitButtonEventListener(dialog);
-}
-function showButtonEventListener(dialog) {
-  const showButton = document.querySelector(".add-task-btn");
-
-  // "Show the dialog" button opens the dialog modally
-  showButton.addEventListener("click", () => {
-    dialog.showModal();
-  });
+  eventListenerHandler.showButtonEventListener(dialog);
+  eventListenerHandler.closeButtonEventListener(dialog);
+  eventListenerHandler.taskFormValuesEventListener(dialog);
+  eventListenerHandler.submitButtonEventListener(dialog);
 }
 
-function closeButtonEventListener(dialog) {
-  const closeButton = document.querySelector("dialog button");
-  // "Close" button closes the dialog
-  closeButton.addEventListener("click", () => {
-    dialog.close();
-  });
-}
+const eventListenerHandler = (() => {
+  const showButtonEventListener = (dialog) => {
+    const showButton = document.querySelector(".add-task-btn");
+    // "Show the dialog" button opens the dialog modally
+    showButton.addEventListener("click", () => {
+      dialog.showModal();
+    });
+  };
 
-function submitButtonEventListener(dialog) {
-  const submitBtn = document.querySelector(".submit-task-btn");
+  const closeButtonEventListener = (dialog) => {
+    const closeButton = document.querySelector("dialog button");
+    // "Close" button closes the dialog
+    closeButton.addEventListener("click", () => {
+      dialog.close();
+    });
+  };
 
-  submitBtn.addEventListener("click", () => {});
-}
+  const submitButtonEventListener = (dialog) => {
+    const submitBtn = document.querySelector(".submit-task-btn");
+    submitBtn.addEventListener("click", () => {});
+  };
+  const taskFormValuesEventListener = (dialog) => {
+    const form = document.querySelector(".task-creation-form");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      let taskProperties = [];
+      dialog.close();
+      const formData = new FormData(form);
+      for (const pair of formData.entries()) {
+        taskProperties.push(pair[1]);
+      }
+      let task = TaskCreator(
+        taskProperties[0],
+        taskProperties[1],
+        taskProperties[2],
+        taskProperties[3]
+      );
 
-function taskFormValuesEventListener(dialog) {
-  const form = document.querySelector(".task-creation-form");
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    let taskProperties = [];
-    dialog.close();
-    const formData = new FormData(form);
-    for (const pair of formData.entries()) {
-      taskProperties.push(pair[1]);
-    }
-    let task = TaskCreator(
-      taskProperties[0],
-      taskProperties[1],
-      taskProperties[2],
-      taskProperties[3]
-    );
+      TaskDisplayer.displayTask(task);
+    });
+  };
 
-    TaskDisplayer.displayTask(task);
-  });
-}
+  return {
+    showButtonEventListener,
+    closeButtonEventListener,
+    submitButtonEventListener,
+    taskFormValuesEventListener,
+  };
+})();
 
 export { showTaskModal };
