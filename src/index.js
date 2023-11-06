@@ -22,7 +22,8 @@ function demoTasks() {
     "Do laundry",
   ];
   sampleTasks.forEach((sampleTask) => {
-    let task = TaskCreator(sampleTask, "", "Urgent");
+    let task = TaskCreator(sampleTask, undefined, "Urgent");
+    listOfTasks.push(task);
     TaskDisplayer.displayTask(task);
   });
 }
