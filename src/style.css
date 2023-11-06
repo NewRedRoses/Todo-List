@@ -83,9 +83,19 @@ body {
   background-color: var(--light-white-color);
   height: 70px;
   border: 3px solid var(--dark-blue-color);
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
   margin: 5px;
+  position: relative;
+}
+.card-container:active {
+  top: 4px;
+}
+.card-title {
+  font-weight: 130;
+}
+.card-description {
+  font-weight: 100;
 }
 .priority-high {
 }
@@ -105,7 +115,11 @@ button {
   position: relative;
 }
 button.add-task-btn {
-  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  width: 50px;
 }
 
 button:hover {
@@ -122,6 +136,8 @@ button:active {
 }
 dialog {
   width: 300px;
+  border-radius: 5%;
+  border: 3px solid var(--light-black-color);
 }
 .task-creation-form {
   display: flex;
