@@ -1,4 +1,4 @@
-import { TaskDisplayer, TaskCreator } from "./Task";
+import { TaskDisplayer, TaskCreator, TaskManager } from "./Task";
 import header from "./Pages/header";
 import sidebar from "./Pages/sidebar";
 import content from "./Pages/content";
@@ -23,8 +23,9 @@ function demoTasks() {
   ];
   sampleTasks.forEach((sampleTask) => {
     let task = TaskCreator(sampleTask, undefined, "Urgent");
-    listOfTasks.push(task);
-    TaskDisplayer.displayTask(task);
+    TaskManager.addThisTaskToArray(task, listOfTasks);
   });
+  TaskDisplayer.displayAllTasks(listOfTasks);``
 }
+console.log(listOfTasks);
 demoTasks();
