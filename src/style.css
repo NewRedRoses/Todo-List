@@ -98,9 +98,9 @@ body {
 }
 .card-delete {
   display: flex;
+  width: 30px;
   justify-content: center;
   align-items: center;
-  width: fit-content;
 }
 .card-delete:hover {
   background-color: var(--light-red-color);
@@ -164,18 +164,21 @@ input[type="date"] {
   display: flex;
   justify-content: flex-end;
 }
-.close-task-btn {
+.close-task-btn,
+.card-delete {
   display: flex;
-  width: 30px;
-  height: 30px;
   border-radius: 5px;
-  padding: 15px;
   justify-content: center;
   align-items: center;
   background: var(--light-red-color);
   border: 3px solid var(--light-red-color);
   color: var(--light-white-color);
   font-size: 1.15em;
+}
+.close-task-btn {
+  width: 30px;
+  padding: 15px;
+  height: 30px;
 }
 
 .close-task-btn:hover {
