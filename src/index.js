@@ -22,10 +22,10 @@ function demoTasks() {
     "Do laundry",
   ];
   sampleTasks.forEach((sampleTask) => {
-    let task = TaskCreator(sampleTask, undefined, "Urgent");
+    let task = TaskCreator(sampleTask, "sample description", new Date());
     TaskManager.addThisTaskToArray(task, listOfTasks);
   });
-  TaskDisplayer.displayAllTasks(listOfTasks);``
+  TaskDisplayer.displayAllTasks(listOfTasks);
 }
 console.log(listOfTasks);
 demoTasks();
