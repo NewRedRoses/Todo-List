@@ -1,5 +1,7 @@
 import { TaskManager } from "./Task";
+
 class Card {
+  static deleteButtonCounter = 0;
   constructor(task) {
     this.task = task;
     this.cardContainer = document.createElement("div");
@@ -17,6 +19,8 @@ class Card {
       } else {
         this.item = document.createElement("button");
         this.item.textContent = "X";
+        this.item.id = `deleteBtn-${Card.deleteButtonCounter}`;
+        Card.deleteButtonCounter++;
       }
       this.item.classList.add(`card-${property}`);
       topSection.appendChild(this.item);
@@ -41,15 +45,18 @@ class Card {
     container.appendChild(this.cardContainer);
 
     // Event listener section
-    this.cardContainer.addEventListener(
-      "click",
-      this.onCardClickRun.bind(this)
+    this.deleteBtn = document.getElementById(
+      `deleteBtn-${Card.deleteButtonCounter - 1}`
     );
+    this.deleteBtn.addEventListener("click", this.onCardDeleteRun.bind(this));
   }
+
   onCardClickRun() {
     console.log(this.task.title);
   }
+  onCardDeleteRun() {
+    this.cardContainer.remove();
+  }
 }
 
-function deleteCard() {}
 export { Card };
