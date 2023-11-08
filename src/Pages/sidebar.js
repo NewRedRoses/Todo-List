@@ -10,8 +10,12 @@ export default function sidebar() {
   taskButtons.forEach((title) => {
     const button = document.createElement("button");
     button.classList.add("task-filter-btn");
+    button.value = title.toLowerCase();
     button.textContent = title;
     sidebarTasksContainer.appendChild(button);
+    button.addEventListener("click", (e) => {
+      console.log(e.currentTarget.value);
+    });
   });
 
   // Tags section
@@ -26,7 +30,11 @@ export default function sidebar() {
   tagButtons.forEach((title) => {
     const button = document.createElement("button");
     button.classList.add("tag-filter-btn");
+    button.value = title.toLowerCase();
     button.textContent = title;
     sidebarTagsContainer.appendChild(button);
+    button.addEventListener("click", (e) => {
+      console.log(e.currentTarget.value);
+    });
   });
 }
