@@ -3,7 +3,11 @@ class Task {
   constructor(title, description, dueDate, priority) {
     this.title = title;
     this.description = description;
-    this.dueDate = dueDate;
+    if (dueDate == "") {
+      this.dueDate = new Date();
+    } else {
+      this.dueDate = new Date(dueDate);
+    }
     this.priority = priority;
   }
 }
