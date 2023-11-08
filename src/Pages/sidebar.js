@@ -1,3 +1,4 @@
+import filterBy from "../FilterBy";
 export default function sidebar() {
   // Tasks section
   const sidebarTasksContainer = document.querySelector(".task-options");
@@ -14,7 +15,7 @@ export default function sidebar() {
     button.textContent = title;
     sidebarTasksContainer.appendChild(button);
     button.addEventListener("click", (e) => {
-      console.log(e.currentTarget.value);
+      filterBy(e.currentTarget.value);
     });
   });
 
@@ -34,7 +35,7 @@ export default function sidebar() {
     button.textContent = title;
     sidebarTagsContainer.appendChild(button);
     button.addEventListener("click", (e) => {
-      console.log(e.currentTarget.value);
+      filterBy(e.currentTarget.value);
     });
   });
 }
