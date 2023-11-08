@@ -107,7 +107,10 @@ body {
   border: 3px solid var(--light-red-color);
 }
 .card-description {
-  font-weight: 100;
+  font-weight: 80;
+}
+.card-dueDate {
+  font-weight: 110;
 }
 .priority-high {
 }
