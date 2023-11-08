@@ -1,6 +1,6 @@
 import { Card } from "./Card";
 class Task {
-  constructor(title, description, dueDate, priority) {
+  constructor(title, description, dueDate, priority, parentArray) {
     this.title = title;
     this.description = description;
     if (dueDate == "") {
@@ -9,11 +9,12 @@ class Task {
       this.dueDate = new Date(dueDate);
     }
     this.priority = priority;
+    this.parentArray = parentArray;
   }
 }
 
-function TaskCreator(title, description, dueDate, priority) {
-  return new Task(title, description, dueDate, priority);
+function TaskCreator(title, description, dueDate, priority, parentArray) {
+  return new Task(title, description, dueDate, priority, parentArray);
 }
 
 const TaskManager = (() => {
@@ -42,5 +43,7 @@ const TaskDisplayer = (() => {
   };
   return { displayTask, displayAllTasks };
 })();
+
+
 
 export { TaskManager, TaskCreator, TaskDisplayer };
