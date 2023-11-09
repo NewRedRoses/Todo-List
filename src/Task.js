@@ -1,15 +1,21 @@
 import { Card } from "./Card";
 import { format } from "date-fns";
+const { zonedTimeToUtc, utcToZonedTime } = require("date-fns-tz");
+
 const dateFormat = "MM/dd/yyyy";
+const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
 class Task {
-  constructor(title, description, dueDate, priority, parentArray) {
+  constructor(title, description, dueDateString, priority, parentArray) {
     this.title = title;
     this.description = description;
-    if (dueDate == "") {
-      const currentDate = new Date();
+    if (dueDateString == "") {
+      let currentDate = new Date();
+      currentDate = utcToZonedTime(currentDate, timeZone);
       this.dueDate = format(currentDate, dateFormat);
     } else {
-      const passedDate = new Date(dueDate);
+      let passedDate = zonedTimeToUtc(dueDateString, timeZone);
+      passedDate = utcToZonedTime(passedDate, timeZone);
       this.dueDate = format(passedDate, dateFormat);
     }
     this.priority = priority;
