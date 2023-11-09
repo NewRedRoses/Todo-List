@@ -36,7 +36,7 @@ class Card {
       this.item.classList.add(`card-${property}`);
       if (property == "dueDate") {
         const taskDate = task[property];
-        this.item.textContent = "Due in" + formatDistanceToNow(taskDate);
+        this.item.textContent = "Due in " + formatDistanceToNow(taskDate);
       } else {
         this.item.textContent = task[property];
       }
