@@ -1,12 +1,16 @@
 import { Card } from "./Card";
+import { format } from "date-fns";
+const dateFormat = "MM/dd/yyyy";
 class Task {
   constructor(title, description, dueDate, priority, parentArray) {
     this.title = title;
     this.description = description;
     if (dueDate == "") {
-      this.dueDate = new Date();
+      const currentDate = new Date();
+      this.dueDate = format(currentDate, dateFormat);
     } else {
-      this.dueDate = new Date(dueDate);
+      const passedDate = new Date(dueDate);
+      this.dueDate = format(passedDate, dateFormat);
     }
     this.priority = priority;
     this.parentArray = parentArray;
@@ -43,7 +47,5 @@ const TaskDisplayer = (() => {
   };
   return { displayTask, displayAllTasks };
 })();
-
-
 
 export { TaskManager, TaskCreator, TaskDisplayer };
