@@ -12,11 +12,11 @@ class Task {
     if (dueDateString == "") {
       let currentDate = new Date();
       currentDate = utcToZonedTime(currentDate, timeZone);
-      this.dueDate = format(currentDate, dateFormat);
+      this.dueDate = currentDate;
     } else {
       let passedDate = zonedTimeToUtc(dueDateString, timeZone);
       passedDate = utcToZonedTime(passedDate, timeZone);
-      this.dueDate = format(passedDate, dateFormat);
+      this.dueDate = passedDate;
     }
     this.priority = priority;
     this.parentArray = parentArray;
