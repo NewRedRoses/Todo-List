@@ -23,7 +23,7 @@ function demoTasks(listOfTasks) {
     let task = TaskCreator(
       sampleTask,
       "sample description",
-      new Date(),
+      "",
       undefined,
       listOfTasks
     );
