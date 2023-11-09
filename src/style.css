@@ -112,6 +112,11 @@ body {
 .card-dueDate {
   font-weight: 110;
 }
+.card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 .priority-high {
 }
 
