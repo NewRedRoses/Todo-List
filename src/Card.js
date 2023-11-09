@@ -1,4 +1,3 @@
-import { TaskManager } from "./Task";
 import { formatDistanceToNow } from "date-fns";
 
 class Card {
@@ -10,7 +9,6 @@ class Card {
 
     const topSection = document.createElement("div");
     topSection.classList.add("card-top");
-
     // Title and delete button section
     const topProperties = ["title", "delete"];
     topProperties.forEach((property) => {
@@ -37,8 +35,8 @@ class Card {
       this.item = document.createElement("div");
       this.item.classList.add(`card-${property}`);
       if (property == "dueDate") {
-        this.item.textContent =
-          "Due in " + formatDistanceToNow(task[property], { addSuffix: true });
+        const taskDate = task[property];
+        this.item.textContent = "Due in" + formatDistanceToNow(taskDate);
       } else {
         this.item.textContent = task[property];
       }
