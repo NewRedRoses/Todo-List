@@ -52,13 +52,13 @@ class Card {
     this.deleteBtn = document.getElementById(
       `deleteBtn-${Card.deleteButtonCounter - 1}`
     );
-    this.deleteBtn.addEventListener("click", this.onCardDeleteRun.bind(this));
+    this.deleteBtn.addEventListener("click", this.deleteAllCards.bind(this));
   }
 
   onCardClickRun() {
     console.log(this.task.title);
   }
-  onCardDeleteRun() {
+  deleteAllCards() {
     this.cardContainer.remove();
   }
 }
