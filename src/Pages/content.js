@@ -7,13 +7,14 @@ export default function content(sectionToRender) {
   const sampleText = document.createElement("div");
   container.appendChild(sampleText);
   console.log("Section to render: ", sectionToRender);
-  // To be removed
-  // demoTasks();
-  console.log(listOfTasks);
-  const date = new Date();
-  const today = date.getDate();
-  const tomorrow = today + 1; // expect for days when end of month
 
+  // Handle today
+  let date = new Date();
+  const today = date.getDate();
+  // Handle tomorrow (works for end of month)
+  let tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow = tomorrow.getDate();
   switch (sectionToRender) {
     case "all":
       TaskDisplayer.displayAllTasks(listOfTasks);
