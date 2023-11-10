@@ -1,4 +1,5 @@
-import { TaskCreator, TaskDisplayer } from "./Task";
+import { TaskCreator, TaskDisplayer, TaskManager } from "./Task";
+import { listOfTasks } from ".";
 function showTaskModal() {
   const dialog = document.querySelector("dialog");
   eventListenerHandler.showButtonEventListener(dialog);
@@ -44,7 +45,7 @@ const eventListenerHandler = (() => {
         taskProperties[2],
         taskProperties[3]
       );
-
+      TaskManager.addThisTaskToArray(task, listOfTasks);
       TaskDisplayer.displayTask(task);
     });
   };
