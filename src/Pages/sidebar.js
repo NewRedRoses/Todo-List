@@ -1,5 +1,7 @@
-import filterBy from "../FilterBy";
+import content from "./content";
+import { removeAllCards } from "../Card";
 export default function sidebar() {
+  let selectedBtn = "all";
   // Tasks section
   const sidebarTasksContainer = document.querySelector(".task-options");
   const tasksTitle = document.createElement("div");
@@ -15,7 +17,8 @@ export default function sidebar() {
     button.textContent = title;
     sidebarTasksContainer.appendChild(button);
     button.addEventListener("click", (e) => {
-      filterBy(e.currentTarget.value);
+      removeAllCards();
+      content(e.currentTarget.value);
     });
   });
 
@@ -35,7 +38,8 @@ export default function sidebar() {
     button.textContent = title;
     sidebarTagsContainer.appendChild(button);
     button.addEventListener("click", (e) => {
-      filterBy(e.currentTarget.value);
+      removeAllCards();
+      content(e.currentTarget.value);
     });
   });
 }
