@@ -1,5 +1,4 @@
 import { Card } from "./Card";
-import { format } from "date-fns";
 const { zonedTimeToUtc, utcToZonedTime } = require("date-fns-tz");
 
 const dateFormat = "MM/dd/yyyy";
@@ -19,12 +18,11 @@ class Task {
       this.dueDate = passedDate;
     }
     this.priority = priority;
-    this.parentArray = parentArray;
   }
 }
 
-function TaskCreator(title, description, dueDate, priority, parentArray) {
-  return new Task(title, description, dueDate, priority, parentArray);
+function TaskCreator(title, description, dueDate, priority) {
+  return new Task(title, description, dueDate, priority);
 }
 
 const TaskManager = (() => {
@@ -45,9 +43,8 @@ const TaskDisplayer = (() => {
   const displayTask = (task) => {
     new Card(task);
   };
-  const displayAllTasks = (listOfTasks) => {
-    console.log(listOfTasks);
-    listOfTasks.forEach((task) => {
+  const displayAllTasks = (array) => {
+    array.forEach((task) => {
       new Card(task);
     });
   };
