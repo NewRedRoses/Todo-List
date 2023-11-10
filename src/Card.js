@@ -45,8 +45,8 @@ class Card {
     this.cardContainer.appendChild(bottomSection);
 
     // Add the card container to the main container
-    const container = document.querySelector(".content");
-    container.appendChild(this.cardContainer);
+    this.container = document.querySelector(".content");
+    this.container.appendChild(this.cardContainer);
 
     // Event listener section
     this.deleteBtn = document.getElementById(
@@ -54,13 +54,14 @@ class Card {
     );
     this.deleteBtn.addEventListener("click", this.deleteCard.bind(this));
   }
-
-  onCardClickRun() {
-    console.log(this.task.title);
-  }
   deleteCard() {
     this.cardContainer.remove();
   }
 }
 
-export { Card };
+function removeAllCards() {
+  const container = document.querySelector(".content");
+  container.innerHTML = "";
+}
+
+export { Card, removeAllCards };
