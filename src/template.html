@@ -13,7 +13,7 @@
       <div class="bottom">
         <div class="sidebar">
           <div class="task-options"></div>
-          <div class="tags-options"></div>
+          <div class="projects-options"></div>
         </div>
         <div class="content"></div>
       </div>
@@ -38,17 +38,6 @@
         <label for="task-dueDate">Due Date</label>
         <input type="date" name="dueDate" id="task-dueDate" />
 
-        <div class="tags">
-          <input type="checkbox" id="tag1" name="school" value="School" />
-          <label for="tag1"> School</label>
-
-          <input type="checkbox" id="tag2" name="work" value="Work" />
-          <label for="tag2"> Work</label>
-
-          <input type="checkbox" id="tag3" name="other" value="Other" />
-          <label for="tag3"> Other</label>
-        </div>
-
         <fieldset id="priority-choices">
           <legend>Priority</legend>
 
@@ -72,6 +61,17 @@
           />
           <label for="low-priority">Low</label>
         </fieldset>
+        <div class="projects-container">
+          <fieldset>
+            <label for="projects">Choose a project:</label>
+            <select name="projects" id="projects">
+              <option value="work">Work</option>
+              <option value="school">School</option>
+              <option value="other">Other</option>
+            </select>
+          
+          </fieldset>
+        </div>
         <input type="submit" value="create" class="submit-task-btn" />
       </form>
     </dialog>
