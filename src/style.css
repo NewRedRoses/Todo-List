@@ -101,6 +101,10 @@ body {
 }
 .card-title {
   font-weight: 130;
+  text-transform: capitalize;
+  width: 10em;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .card-delete {
   display: flex;
@@ -114,6 +118,9 @@ body {
 }
 .card-description {
   font-weight: 80;
+  width: 10em;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .card-dueDate {
   font-weight: 110;
