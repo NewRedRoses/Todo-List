@@ -73,6 +73,7 @@ body {
 }
 .content {
   display: flex;
+  flex-direction: column;
   align-content: flex-start;
   margin: 10px;
   flex-wrap: wrap;
@@ -199,4 +200,10 @@ input[type="date"] {
   font-weight: 150;
   font-size: 1.3em;
   margin-bottom: 10px;
+}
+.project-header {
+  font-size: 1.4em;
+  font-weight: 200;
+  text-transform: capitalize;
+  color: var(--light-white-color);
 }

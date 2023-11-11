@@ -5,6 +5,12 @@ export default function content(sectionToRender) {
   const container = document.querySelector(".content");
   const sampleText = document.createElement("div");
   container.appendChild(sampleText);
+  if (sectionToRender != undefined) {
+    const projectText = document.createElement("div");
+    projectText.textContent = `${sectionToRender} tasks`;
+    projectText.classList.add("project-header");
+    container.appendChild(projectText);
+  }
 
   switch (sectionToRender) {
     case "all":
