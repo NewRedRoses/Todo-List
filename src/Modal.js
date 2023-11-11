@@ -32,6 +32,7 @@ const eventListenerHandler = (() => {
   const taskFormValuesEventListener = (dialog) => {
     const form = document.querySelector(".task-creation-form");
     form.addEventListener("submit", (event) => {
+      form.reset(); // Reset all form data
       event.preventDefault();
       let taskProperties = [];
       dialog.close();
