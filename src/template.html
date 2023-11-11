@@ -25,7 +25,7 @@
       <div class="dialog-title">Create a task</div>
       <form action="" class="task-creation-form">
         <label for="task-title">Title</label>
-        <input type="text" name="task-title" id="task-title" />
+        <input type="text" name="task-title" id="task-title" required />
 
         <label for="task-description">Description</label>
         <input
@@ -36,7 +36,7 @@
         />
 
         <label for="task-dueDate">Due Date</label>
-        <input type="date" name="dueDate" id="task-dueDate" />
+        <input type="date" name="dueDate" id="task-dueDate" required />
 
         <fieldset id="priority-choices">
           <legend>Priority</legend>
@@ -62,17 +62,16 @@
           <label for="low-priority">Low</label>
         </fieldset>
         <div class="projects-container">
-          <fieldset>
+          <fieldset required>
             <label for="projects">Choose a project:</label>
             <select name="projects" id="projects">
               <option value="work">Work</option>
               <option value="school">School</option>
               <option value="other">Other</option>
             </select>
-          
           </fieldset>
         </div>
-        <input type="submit" value="create" class="submit-task-btn" />
+        <input type="submit" value="Create" class="submit-task-btn" />
       </form>
     </dialog>
   </body>
