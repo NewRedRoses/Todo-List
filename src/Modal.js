@@ -48,6 +48,7 @@ const eventListenerHandler = (() => {
       );
       TaskManager.addThisTaskToArray(task, listOfTasks);
       TaskDisplayer.displayTask(task);
+      form.reset();
     });
   };
 
