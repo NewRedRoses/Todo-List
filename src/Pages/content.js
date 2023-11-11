@@ -6,13 +6,6 @@ export default function content(sectionToRender) {
   const sampleText = document.createElement("div");
   container.appendChild(sampleText);
 
-  // Handle today
-  let date = new Date();
-  const today = date.getDate();
-  // Handle tomorrow (works for end of month)
-  let tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  tomorrow = tomorrow.getDate();
   switch (sectionToRender) {
     case "all":
       TaskDisplayer.displayAllTasks(listOfTasks);
@@ -20,16 +13,32 @@ export default function content(sectionToRender) {
     case "today":
       // In theory would need to be more robust than just today's digit
       // It would need to have the same day, month and year.
-      const listOfTodayTasks = listOfTasks.filter((task) => {
-        return task.dueDate.getDate() == today;
-      });
-      TaskDisplayer.displayAllTasks(listOfTodayTasks);
+      // Handle today
+      let currentDate = new Date();
+      const today = currentDate.getDate();
+      filterByDate(today);
       break;
     case "tomorrow":
-      const listOfTomorrowTasks = listOfTasks.filter((task) => {
-        return task.dueDate.getDate() == tomorrow;
-      });
-      TaskDisplayer.displayAllTasks(listOfTomorrowTasks);
+      // Handle tomorrow (works for end of month)
+      let tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      tomorrow = tomorrow.getDate();
+      filterByDate(tomorrow);
+      break;
+    default:
+      filterByProject(sectionToRender);
       break;
   }
+}
+function filterByDate(wantedDate) {
+  const filteredResults = listOfTasks.filter((task) => {
+    return task.dueDate.getDate() == wantedDate;
+  });
+  TaskDisplayer.displayAllTasks(filteredResults);
+}
+function filterByProject(projName) {
+  const filteredResults = listOfTasks.filter((task) => {
+    return task.project == projName;
+  });
+  TaskDisplayer.displayAllTasks(filteredResults);
 }
