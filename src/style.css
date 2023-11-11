@@ -14,8 +14,11 @@
   --light-white-color: #ecf0f1;
   --light-gray-color: #95a5a6;
   --light-red-color: #e74c3c;
+  --dark-red-color: #c0392b;
   --light-orange-color: #e67e22;
+  --dark-orange-color: #d35400;
   --light-yellow-color: #f1c40f;
+  --dark-yellow-color: #f39c12;
 }
 body {
   background-color: var(--light-blue-color);
@@ -88,7 +91,6 @@ body {
   width: clamp(10px, 200px, 300px);
   background-color: var(--light-white-color);
   height: 70px;
-  border: 3px solid var(--dark-blue-color);
   border-radius: 10px;
   padding: 10px;
   margin: 5px;
@@ -130,7 +132,14 @@ body {
   flex-direction: column;
   gap: 5px;
 }
-.priority-high {
+.low-priority {
+  border: 3px solid var(--dark-blue-color);
+}
+.med-priority {
+  border: 3px solid var(--light-orange-color);
+}
+.high-priority {
+  border: 3px solid var(--dark-red-color);
 }
 
 button {

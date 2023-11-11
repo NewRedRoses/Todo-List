@@ -1,6 +1,7 @@
 import { formatDistanceToNow } from "date-fns";
 import { TaskManager } from "./Task";
 import { listOfTasks } from ".";
+import { setCardPriority } from "./Priority";
 class Card {
   static deleteButtonCounter = 0;
   constructor(task) {
@@ -54,6 +55,7 @@ class Card {
       `deleteBtn-${Card.deleteButtonCounter - 1}`
     );
     this.deleteBtn.addEventListener("click", this.deleteCard.bind(this));
+    setCardPriority(this.cardContainer, this.task.priority);
   }
   deleteCard() {
     TaskManager.removeThisTaskFromArray(this.task, listOfTasks);
