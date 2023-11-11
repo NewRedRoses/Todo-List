@@ -43,7 +43,8 @@ const eventListenerHandler = (() => {
         taskProperties[0],
         taskProperties[1],
         taskProperties[2],
-        taskProperties[3]
+        taskProperties[3],
+        taskProperties[4]
       );
       TaskManager.addThisTaskToArray(task, listOfTasks);
       TaskDisplayer.displayTask(task);
