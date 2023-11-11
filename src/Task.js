@@ -5,7 +5,7 @@ const dateFormat = "MM/dd/yyyy";
 const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 class Task {
-  constructor(title, description, dueDateString, tag, priority) {
+  constructor(title, description, dueDateString, priority, project) {
     this.title = title;
     this.description = description;
     if (dueDateString == "") {
@@ -17,13 +17,13 @@ class Task {
       passedDate = utcToZonedTime(passedDate, timeZone);
       this.dueDate = passedDate;
     }
-    this.tag = tag;
+    this.project = project;
     this.priority = priority;
   }
 }
 
-function TaskCreator(title, description, dueDate, tag, priority) {
-  return new Task(title, description, dueDate, tag, priority);
+function TaskCreator(title, description, dueDate, priority, project) {
+  return new Task(title, description, dueDate, priority, project);
 }
 
 const TaskManager = (() => {

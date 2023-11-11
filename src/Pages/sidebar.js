@@ -22,21 +22,21 @@ export default function sidebar() {
     });
   });
 
-  // Tags section
-  const sidebarTagsContainer = document.querySelector(".tags-options");
-  const tagsTitle = document.createElement("div");
-  tagsTitle.classList.add("sidebar-title");
+  // Projects section
+  const sidebarProjectsContainer = document.querySelector(".projects-options");
+  const projectsTitle = document.createElement("div");
+  projectsTitle.classList.add("sidebar-title");
 
-  tagsTitle.textContent = "Tags";
-  sidebarTagsContainer.appendChild(tagsTitle);
+  projectsTitle.textContent = "Projects";
+  sidebarProjectsContainer.appendChild(projectsTitle);
 
-  const tagButtons = ["School", "Work", "Random"];
-  tagButtons.forEach((title) => {
+  const projectButtons = ["School", "Work", "Other"];
+  projectButtons.forEach((title) => {
     const button = document.createElement("button");
-    button.classList.add("tag-filter-btn");
+    button.classList.add("project-filter-btn");
     button.value = title.toLowerCase();
     button.textContent = title;
-    sidebarTagsContainer.appendChild(button);
+    sidebarProjectsContainer.appendChild(button);
     button.addEventListener("click", (e) => {
       removeAllCards();
       content(e.currentTarget.value);
