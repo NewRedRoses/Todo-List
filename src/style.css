@@ -76,8 +76,12 @@ body {
   flex-direction: column;
   align-content: flex-start;
   margin: 10px;
-  flex-wrap: wrap;
   flex: 7;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 .card-container {
   width: clamp(200px, 250px, 300px);

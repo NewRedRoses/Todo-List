@@ -12,6 +12,10 @@ export default function content(sectionToRender) {
     container.appendChild(projectText);
   }
 
+  const cardsContainer = document.createElement("div");
+  cardsContainer.classList.add("cards");
+  container.appendChild(cardsContainer);
+
   switch (sectionToRender) {
     case "all":
       TaskDisplayer.displayAllTasks(listOfTasks);

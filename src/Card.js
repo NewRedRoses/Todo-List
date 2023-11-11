@@ -45,7 +45,7 @@ class Card {
     this.cardContainer.appendChild(bottomSection);
 
     // Add the card container to the main container
-    this.container = document.querySelector(".content");
+    this.container = document.querySelector(".cards");
     this.container.appendChild(this.cardContainer);
 
     // Event listener section
