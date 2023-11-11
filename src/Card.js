@@ -1,5 +1,6 @@
 import { formatDistanceToNow } from "date-fns";
-
+import { TaskManager } from "./Task";
+import { listOfTasks } from ".";
 class Card {
   static deleteButtonCounter = 0;
   constructor(task) {
@@ -55,6 +56,7 @@ class Card {
     this.deleteBtn.addEventListener("click", this.deleteCard.bind(this));
   }
   deleteCard() {
+    TaskManager.removeThisTaskFromArray(this.task, listOfTasks);
     this.cardContainer.remove();
   }
 }
