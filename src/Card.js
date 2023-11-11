@@ -1,4 +1,4 @@
-import { formatDistanceToNow } from "date-fns";
+import { formatDistanceToNow, isPast } from "date-fns";
 import { TaskManager } from "./Task";
 import { listOfTasks } from ".";
 import { setCardPriority } from "./Priority";
@@ -38,7 +38,12 @@ class Card {
       this.item.classList.add(`card-${property}`);
       if (property == "dueDate") {
         const taskDate = task[property];
-        this.item.textContent = "Due in " + formatDistanceToNow(taskDate);
+        if (isPast(task[property])) {
+          this.item.textContent =
+            "Was due " + formatDistanceToNow(taskDate) + " ago";
+        } else {
+          this.item.textContent = "Due in " + formatDistanceToNow(taskDate);
+        }
       } else {
         this.item.textContent = task[property];
       }
