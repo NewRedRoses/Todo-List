@@ -62,6 +62,7 @@ class Card {
     this.deleteBtn.addEventListener("click", this.deleteCard.bind(this));
     setCardPriority(this.cardContainer, this.task.priority);
   }
+
   deleteCard() {
     TaskManager.removeThisTaskFromArray(this.task, listOfTasks);
     this.cardContainer.remove();

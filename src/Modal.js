@@ -1,7 +1,7 @@
 import { TaskCreator, TaskDisplayer, TaskManager } from "./Task";
 import { listOfTasks } from ".";
 function showTaskModal() {
-  const dialog = document.querySelector("dialog");
+  const dialog = document.querySelector('dialog');
   eventListenerHandler.showButtonEventListener(dialog);
   eventListenerHandler.closeButtonEventListener(dialog);
   eventListenerHandler.taskFormValuesEventListener(dialog);
@@ -58,6 +58,6 @@ const eventListenerHandler = (() => {
     submitButtonEventListener,
     taskFormValuesEventListener,
   };
-})();
+})()
 
 export { showTaskModal };
